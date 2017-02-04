@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project wmlist with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/Users/silmarco/Documents/SFW/wmlist.jar">
+            <manifest>
+                <attribute name="Main-Class" value="com.hpe.middleware.wmlist.ExecuteWMQuery"/>
+                <attribute name="Class-Path" value=". wmlist_lib/weblogic-L10N.jar wmlist_lib/weblogic.jar"/>
+            </manifest>
+            <fileset dir="C:/Users/silmarco/wso2_ws/wmlist"/>
+        </jar>
+        <delete dir="C:/Users/silmarco/Documents/SFW/wmlist_lib"/>
+        <mkdir dir="C:/Users/silmarco/Documents/SFW/wmlist_lib"/>     
+        <copy file="C:/Oracle/Middleware2/wlserver_10.3/server/lib/weblogic-L10N.jar" todir="C:/Users/silmarco/Documents/SFW/wmlist_lib"/>
+        <copy file="C:/Oracle/Middleware2/wlserver_10.3/server/lib/weblogic.jar" todir="C:/Users/silmarco/Documents/SFW/wmlist_lib"/>
+    </target>
+</project>
